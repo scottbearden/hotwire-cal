@@ -24,12 +24,9 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <div aria-live="assertive" class="fixed inset-0 flex items-end px-2 py-3 pointer-events-none sm:p-3">
-        <div class="w-full flex flex-col items-center space-y-4" id="flash_messages">
-          <%= render("shared/flash") %>
-        </div>
-      </div>
+    <%= render("shared/navigation", title: "Hotwire Calendar") %>
+
+    <main class="mx-auto max-w-full px-6 py-4 sm:py-6">
       <%= yield %>
     </main>
   </body>
