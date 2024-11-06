@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 32dcdcaef666e0043b0df844aa167201d50f8c9c
+  revision: a6dee8c5b1baffa0ac9e57016b90d8c88a8db1f6
   branch: main
   specs:
     actioncable (8.1.0.alpha)
@@ -345,7 +345,7 @@ GEM
     thruster (0.1.8-arm64-darwin)
     thruster (0.1.8-x86_64-darwin)
     thruster (0.1.8-x86_64-linux)
-    timeout (0.4.1)
+    timeout (0.4.2)
     turbo-rails (2.0.11)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
