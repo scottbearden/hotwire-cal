@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 5992f9efde7dcece803594b0e0063cf64b73d40d
+  revision: 5d05082c09bdd49456686bf6a018f674409171b2
   branch: main
   specs:
     actioncable (8.1.0.alpha)
@@ -190,7 +190,7 @@ GEM
     matrix (0.4.2)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
-    minitest (5.25.1)
+    minitest (5.25.2)
     mission_control-jobs (0.5.0)
       actioncable (>= 7.1)
       actionpack (>= 7.1)
@@ -263,7 +263,7 @@ GEM
       nokogiri (~> 1.14)
     rainbow (3.1.1)
     rake (13.2.1)
-    rdoc (6.7.0)
+    rdoc (6.8.1)
       psych (>= 4.0.0)
     regexp_parser (2.9.2)
     reline (0.5.11)
@@ -356,7 +356,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
-    uri (1.0.1)
+    uri (1.0.2)
     useragent (0.16.10)
     web-console (4.2.1)
       actionview (>= 6.0.0)
