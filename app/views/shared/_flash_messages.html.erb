@@ -1,0 +1,16 @@
+<div class="py-4">
+  <% flash.each do |type, message| %>
+    <div class="<%= flash_css_class(type) %> rounded-md p-4 mb-4">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <%= flash_icon(type) %>
+        </div>
+        <div class="ml-3">
+          <p class="text-sm font-medium">
+            <%= message %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
