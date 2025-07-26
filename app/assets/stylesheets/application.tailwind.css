@@ -1,13 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /*
-
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
-  }
-}
-
+  Tailwind CSS v4 - This file imports the compiled Tailwind CSS.
+  The source file is located at app/assets/tailwind/application.css
+  and is compiled to app/assets/builds/tailwind.css
 */
+
+@import url('./builds/tailwind.css');

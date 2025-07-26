@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* Your custom theme configuration */
+@theme {
+  --font-family-sans: "Inter var", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Import Tailwind's plugin CSS */
+@import "@tailwindcss/forms" layer(components);
+@import "@tailwindcss/typography" layer(components);
+@import "@tailwindcss/container-queries" layer(components);
