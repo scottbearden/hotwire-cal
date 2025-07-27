@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   namespace :settings do
     resource :account, only: [ :edit ]
+    resource :password, only: [ :edit, :update ]
     resource :personal_details, only: [ :edit, :update ]
   end
 

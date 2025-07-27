@@ -16,6 +16,6 @@ class Settings::PersonalDetailsController < Settings::BaseController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :handle, :timezone)
+    params.require(:user).permit(:name, :email, :handle, :timezone, :password, :password_confirmation)
   end
 end
