@@ -9,10 +9,14 @@ Rails.application.routes.draw do
   # Mount Mission Control for job monitoring (restricted to development/local for now)
   mount MissionControl::Jobs::Engine, at: "/jobs" if Rails.env.development? || Rails.env.test?
 
+  # Authentication
+  resources :sessions, only: [ :new, :create ]
+  get "logout", to: "sessions#destroy", as: :logout
+
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "main#index"
+  root to: "main#index"
 end
