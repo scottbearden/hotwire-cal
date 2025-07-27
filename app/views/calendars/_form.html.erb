@@ -1,0 +1,29 @@
+<%= form_with(model: calendar, class: "w-full") do |form| %>
+  <h1 class="text-2xl font-semibold"><%= calendar.new_record? ? "Add Calendar" : "Edit Calendar" %></h1>
+
+  <% if calendar.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+
+      <ul>
+        <% calendar.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-3">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, autofocus: true, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-3">
+    <%= form.label :color, style: "display: block" %>
+    <%= form.text_field :color, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-3">
+    <%= form.submit form.object.new_record? ? "Add Calendar" : "Update Calendar", class: "rounded-lg py-2 px-3 bg-rose-600 text-white hover:bg-rose-700 inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

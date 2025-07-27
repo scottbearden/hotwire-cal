@@ -1,0 +1,45 @@
+<%= form_with(model: event) do |form| %>
+  <h1 class="text-2xl font-semibold"><%= event.new_record? ? "Add Event" : "Edit Event" %></h1>
+
+  <% if event.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-3">
+    <%= form.label :summary %>
+    <%= form.text_field :summary, autofocus: true, placeholder: ["Dentist", "Therapy"].sample, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-3">
+    <%= form.label :start_time %>
+    <div class="flex items-center gap-x-2">
+      <%= form.date_select :start_time, default: form.object.start_time.presence || params[:date].to_date, class: "block py-2.5 px-0 w-full text-sm text-gray-500 border-0 border-b-2 border-gray-200 appearance-none outline-none focus:ring-0 focus:border-gray-200 peer" %>
+      <%= form.time_select :start_time, { ampm: true, minute_step: 5, ignore_date: true }, { class: "block py-2.5 px-0 w-full text-sm text-gray-500 border-0 border-b-2 border-gray-200 appearance-none outline-none focus:ring-0 focus:border-gray-200 peer"} %>
+    </div>
+  </div>
+
+  <div class="my-3">
+    <%= form.label :end_time, style: "display: block" %>
+    <div class="flex items-center gap-x-2">
+      <%= form.date_select :end_time, default: form.object.end_time.presence || params[:date].to_date, class: "block py-2.5 px-0 w-full text-sm text-gray-500 border-0 border-b-2 border-gray-200 appearance-none outline-none focus:ring-0 focus:border-gray-200 peer" %>
+      <%= form.time_select :end_time, { ampm: true, minute_step: 5, ignore_date: true }, { class: "block py-2.5 px-0 w-full text-sm text-gray-500 border-0 border-b-2 border-gray-200 appearance-none outline-none focus:ring-0 focus:border-gray-200 peer"} %>
+    </div>
+  </div>
+
+  <div class="my-3">
+    <%= form.label :calendar_id, style: "display: block" %>
+    <%= form.select :calendar_id, options_from_collection_for_select(Current.user.calendars.all, :id, :name, form.object.calendar_id), {}, { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" } %>
+  </div>
+
+  <div class="mt-4">
+    <%= form.submit form.object.new_record? ? "Add event" : "Update event", class: "rounded-lg py-2 px-3 bg-rose-600 text-white hover:bg-rose-700 inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

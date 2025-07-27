@@ -1,0 +1,8 @@
+<style>
+html {
+  --main-color: <%= @calendar.color %>;
+}
+</style>
+
+<h1><%= @calendar.name %></h1>
+<%= link_to "Edit", edit_calendar_path(@calendar) %>
