@@ -1,0 +1,3 @@
+<% if @event.persisted? %>
+    <%= button_to "Delete", @event, data: { turbo_confirm: "Are you sure?" } method: :delete, class: "text-red-600" %>
+  <% end %>
