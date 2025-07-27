@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   # Authentication
   resources :registrations, only: [ :new, :create ]
 
+  namespace :settings do
+    resource :account, only: [ :edit ]
+    resource :personal_details, only: [ :edit, :update ]
+  end
+
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker

@@ -2,11 +2,15 @@ module Authentication
   extend ActiveSupport::Concern
 
   included do
-    helper_method :user_signed_in?
+    helper_method :user_signed_in?, :current_user
     before_action :set_current_user
   end
 
   private
+
+  def current_user
+    Current.user
+  end
 
   def user_signed_in?
     Current.user.present?
