@@ -42,4 +42,12 @@ module Authentication
       Current.user = authenticated_user
     end
   end
+
+  # Called after a user registers successfully.
+  def after_registration(user)
+    login(user)
+
+    # TODO: Implement email confirmation
+    # UserMailer.with(user: user).email_confirmation.deliver_later!
+  end
 end
