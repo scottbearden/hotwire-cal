@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_27_050623) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_28_011857) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -69,6 +69,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_27_050623) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.string "location"
+    t.boolean "all_day"
+    t.string "status"
+    t.string "visibility"
+    t.text "recurrence_rule"
+    t.string "color_id"
+    t.json "attendees"
+    t.json "reminders"
+    t.datetime "created_at_external"
+    t.datetime "updated_at_external"
+    t.string "creator_email"
+    t.string "organizer_email"
+    t.string "external_event_id"
+    t.string "ical_uid"
+    t.string "timezone"
     t.index ["calendar_id"], name: "index_events_on_calendar_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
